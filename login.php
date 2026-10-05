@@ -70,36 +70,3 @@ include 'includes/auth_form_head.php';
   </section>
   <script src="assets/js/script.js"></script>
 </body>
-</html><?php
-require 'includes/functions.php';
-if (isset($_SESSION['user'])) redirect('dashboard.php');
-
-$errors = [];
-$email  = $_COOKIE['remember_email'] ?? '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email    = clean($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
-
-    if (!csrf_ok()) {
-        $errors['form'] = 'Session expired. Please try again.';
-    } else {
-        if ($email === '')                                   $errors['email'] = 'Email is required.';
-        elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))  $errors['email'] = 'Enter a valid email address.';
-        if ($password === '')                                $errors['password'] = 'Password is required.';
-
-        if (!$errors) {
-            $user = find_user($email);
-            if (!$user || !password_verify($password, $user['password'])) {
-                $errors['form'] = 'Incorrect email or password.';
-            } else {
-                session_regenerate_id(true);
-                $_SESSION['user'] = ['name' => $user['email'], 'email' => $user['email']];
-                if (!empty($_POST['remember'])) setcookie('remember_email', $email, time() + 60*60*24*30, '/');
-                else setcookie('remember_email', '', time() - 3600, '/');
-                flash('success', 'Welcome back! You are now logged in.');
-                redirect('dashboard.php');
-            }
-        }
-    }
-}

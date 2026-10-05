@@ -29,7 +29,11 @@ if (!defined('FUNCTIONS_LOADED')) {
     }
 
     function save_users(array $users): void {
-        file_put_contents(USERS_FILE, json_encode($users, JSON_PRETTY_PRINT), LOCK_EX);
+        $dir = dirname(USERS_FILE);
+        if (!is_dir($dir)) mkdir($dir, 0775, true);
+        if (file_put_contents(USERS_FILE, json_encode($users, JSON_PRETTY_PRINT), LOCK_EX) === false) {
+            throw new RuntimeException('Could not write users.json');
+        }
     }
 
     function find_user(string $email): ?array {
