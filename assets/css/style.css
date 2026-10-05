@@ -13,9 +13,8 @@ a{color:inherit}
 }
 
 /* ---------- Auth pages ---------- */
-.auth{display:grid;grid-template-columns:1fr minmax(320px,430px);align-items:center;
-  background:var(--sand);padding-right:6vw}
-.auth .photo{min-height:100vh}
+.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--sand)}
+.auth .photo{min-height:100vh;height:100%}
 .card{background:var(--plum);color:#fff;border-radius:200px 200px 28px 28px;
   padding:4.5rem 2.2rem 2rem;justify-self:center;width:100%;max-width:400px;margin:2rem 0}
 .card h2{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.8rem;text-align:center;margin-bottom:1.6rem}
@@ -37,7 +36,10 @@ a{color:inherit}
 .divider::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid #ffffff55}
 .divider span{position:relative;background:var(--plum);padding:0 .6rem}
 .social{display:flex;justify-content:center;gap:.8rem;margin-bottom:1rem}
-.social span{width:34px;height:34px;border-radius:50%;background:var(--rose);display:grid;place-items:center;font-weight:600}
+.social a{width:38px;height:38px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;text-decoration:none;transition:transform .2s,background .2s}
+.social a:hover{background:#c88b93;transform:translateY(-2px)}
+.social a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.social svg{width:18px;height:18px}
 .switch{text-align:center;font-size:.78rem;margin-top:.6rem}
 .switch a{color:var(--blush);font-weight:500}
 
