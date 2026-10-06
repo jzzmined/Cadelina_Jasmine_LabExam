@@ -10,5 +10,17 @@
         "phone": "09091308765",
         "password": "$2y$10$a4UPxoOQGs9KzLviypWq\/u06u7Wjdn2DVzdF90\/79DFfktPx3H9Wi",
         "created": "2026-10-05T17:49:02+02:00"
+    },
+    {
+        "email": "jazzylee23@gmail.com",
+        "phone": "09600150070",
+        "password": "$2y$10$LewrKocj2rCxpIO8jD.45OfWcBlRMszvZkj\/82tplCPeItMIvpXLa",
+        "created": "2026-10-06T04:13:04+02:00"
+    },
+    {
+        "email": "jasminezapico@gmail.com",
+        "phone": "09600150070",
+        "password": "$2y$10$du\/6mKVRKlwSuzcYJsaWtupqB4tHXFYvgOH4QgRdkBZZsgwn5d29a",
+        "created": "2026-10-06T04:14:32+02:00"
     }
 ]
