@@ -5,8 +5,6 @@ Glow is a beauty and confidence brand concept. This project is a Login and Regis
 
 **Figma Design:** https://www.figma.com/design/E5WBO5LosUBOWrmaCEgymo/CS15--LabAct-3?node-id=0-1&t=BlLwv0TKTg6vEk8E-1.
 
-**Screen Recording:** [Watch the demo](screen%20recording/labexam2-screenrec.mp4) (GitHub may ask you to view raw or download the file)
-
 ## Features
 - Landing page, Login page, Sign Up page and a protected Dashboard
 - Navigation between Login and Sign Up
